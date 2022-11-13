@@ -42,6 +42,15 @@
 
 <button></button>
 <script>
+  const divs = document.querySelectorAll('div');
+
+  function logText(e) {
+    console.log(this.classList.value);
+    e.stopPropagation(); //stop bubbling
+  }
+
+  divs.forEach(div=> div.addEventListener('click',logText,{capture:false}));
+  //capture yanına ozellik olarak "once" eklersem sadece bir kez sonuc dondurup unbind-remove- ediyor
 
 </script>
 </body>
